@@ -85,6 +85,7 @@ export default function () {
     var ackReceived = false;
     for(var i=1; i<3 && (ackReceived==false); i++) {
         sleep(0.2);
+        params.requestNumber ="bba0a39a-fa31-4e66-b4d1-950482bd43eb";
         group(`Read Path iteration ${i}`, function() {
             let responseGet = http.get(url+"&requestNumber="+ params.requestNumber, paramsOption);    
             if(responseGet.status==200) {ackReceived=true};
