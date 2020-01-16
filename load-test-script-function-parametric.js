@@ -83,8 +83,8 @@ export default function () {
 
     params.requestNumber ="bba0a39a-fa31-4e66-b4d1-950482bd43eb";
     var ackReceived = false;
-    for(var i=1; i<3 && (ackReceived==false); i++) {
-        sleep(0.2);
+    for(var i=1; i<8 && (ackReceived==false); i++) {
+       // sleep(0.2);
         
         group(`Read Path iteration ${i}`, function() {
             let responseGet = http.get(url+"?requestNumber="+ params.requestNumber, paramsOption);    
