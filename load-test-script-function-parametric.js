@@ -87,7 +87,7 @@ export default function () {
         sleep(0.2);
         params.requestNumber ="bba0a39a-fa31-4e66-b4d1-950482bd43eb";
         group(`Read Path iteration ${i}`, function() {
-            let responseGet = http.get(url+"&requestNumber="+ params.requestNumber, paramsOption);    
+            let responseGet = http.get(url+"?requestNumber="+ params.requestNumber, paramsOption);    
             if(responseGet.status==200) {ackReceived=true};
             check(responseGet, {
                 "ReadPath 200 at iteration": (r) => r.status == 200,
